@@ -1,0 +1,30 @@
+.content{
+  border: 1px solid #cdcdcd94;
+  background: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 10px;
+}
+.picture{
+  background: #cdcdcd94;
+  min-width: 80px;
+  min-height: 80px;
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+.data{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
+}
+.title{
+  font-size: 1.2em;
+  margin: 0px;
+  display: block;
+  height: 12px;
+  background: #cdcdcd94;
+}

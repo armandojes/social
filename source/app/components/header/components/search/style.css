@@ -1,0 +1,29 @@
+.search_content{
+  width: 100%;
+  background: red;
+  display: flex;
+  height: 25px;
+  margin: auto 0px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.submit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  min-width: 40px;
+  border: 1px solid #cdcdcd;
+  background: #cdcdcd;
+}
+.icon{
+  display: block;
+  width: 18px;
+}
+.input{
+  outline: none;
+  padding: 0px 10px;
+  box-sizing: border-box;
+  border: 1px solid #cdcdcd;
+  width: 95%;
+}

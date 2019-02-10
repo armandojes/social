@@ -1,0 +1,22 @@
+.content{
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #fff;
+  border-radius: 5px;
+}
+.input{
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #cdcdcd;
+  padding: 6px 10px;
+}
+.header{
+  margin-bottom: 5px;
+}
+.counter{
+  display: inline-block;
+  color: gray;
+  font-size: .9em;
+}

@@ -1,0 +1,40 @@
+.content{
+  padding: 10px;
+  min-height: 400px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.button{
+  display: flex;
+  width: 160px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  height: 30px;
+  color: #808080;
+}
+.button:hover{
+  background: #ececec;
+}
+.input{
+  display: none;
+}
+.icon{
+  width: 20px;
+  display: block;
+  margin-right: 10px;
+  filter: grayscale(100);
+}
+.header{
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 41px;
+}
+.loading{
+  margin-left: 10px;
+  width: 40px;
+}

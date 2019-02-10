@@ -1,0 +1,42 @@
+.content{
+  display: flex;
+  align-items: center;
+  padding: 25px 10px;
+  border-radius: 5px;
+  background: #fff;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+.buttons{
+  font-size: .9em;
+  display: block;
+  width: 30%;
+  cursor: pointer;
+  text-align: center;
+  margin-right: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #a9a9a9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buttons:last-of-type{
+  margin-right: 0px;
+}
+.icon{
+  width: 25px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .buttons{
+    padding: 3px;
+    font-size: .75em;
+    width: 32%;
+  }
+  .icon{
+    width: 20px;
+    margin-right: 4px;
+  }
+}

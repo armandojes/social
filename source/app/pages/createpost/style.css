@@ -1,0 +1,31 @@
+.content{
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  min-height: 85vh;
+}
+.primary{
+  width: 70%;
+}
+.secondary{
+  width: 30%;
+  margin-left: 20px;
+}
+@media screen and (max-width: 1000px) {
+  .primary{
+    width: 75%;
+  }
+  .secondary{
+    width: 25%;
+    margin-left: 10px;
+    min-width: 200px;
+  }
+}
+@media screen and (max-width:750px) {
+  .primary{
+    width: 100%;
+  }
+  .secondary{
+    display: none;
+  }
+}

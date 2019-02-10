@@ -1,0 +1,46 @@
+.content{
+  background: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 79vh;
+  border-radius: 5px;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.picture{
+  width: 130px;
+  display: block;
+}
+.big_text{
+  margin: 20px 0px;
+  font-size: 4em;
+  color: #4b8d8f
+}
+.message{
+  font-size: 1.5em;
+  color: #4b8d8f;
+}
+@media screen and (max-width:500px) {
+  .image{
+    width: 100px;
+  }
+  .big_text{
+    font-size: 3em;
+  }
+  .message{
+    font-size: 1.4em;
+  }
+}
+@media screen and (max-width:300px) {
+  .image{
+    width: 90px;
+  }
+  .big_text{
+    font-size: 2.5em;
+  }
+  .message{
+    font-size: 1.2em;
+  }
+}

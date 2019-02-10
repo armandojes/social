@@ -1,0 +1,11 @@
+.loading_content{
+  background: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  color: gray;
+}

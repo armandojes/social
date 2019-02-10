@@ -1,0 +1,56 @@
+.form{
+  width: 80%;
+  text-align: center;
+  padding: 10px 0px;
+}
+.title{
+  font-size: 1.5em;
+  padding: 0px;
+  margin: 0px;
+}
+.picture{
+  display: block;
+  margin: 10px auto;
+  width: 100px;
+}
+.input{
+  padding: 6px 15px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #cdcdcd;
+}
+.button{
+  cursor: pointer;
+  display: block;
+  background: #4267b2;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 0px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+.button_register{
+  cursor: pointer;
+  display: block;
+  background: #808080;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 9px 0px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+.message{
+  color: #4267b2;
+  margin: 10px auto;
+}
+@media screen and (max-width:350px) {
+  .form{
+    width: 95%;
+  }
+}

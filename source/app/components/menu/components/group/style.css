@@ -1,0 +1,21 @@
+.group_container{
+  margin-bottom: 10px;
+  color: gray;
+}
+.title_group{
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.option{
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  align-items: center;
+  text-decoration: none;
+  color: gray;
+}
+.icon{
+  width: 25px;
+  display: block;
+  margin-right: 10px;
+}

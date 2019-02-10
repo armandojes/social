@@ -1,0 +1,12 @@
+.body{
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.select{
+  width: 80%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 6px 10px;
+}

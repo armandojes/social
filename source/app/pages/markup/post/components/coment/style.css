@@ -1,0 +1,30 @@
+.coment{
+  margin-bottom: 10px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+.header_coment{
+  display: flex;
+  align-items: center;
+  font-size: .9em;
+  margin-bottom: 5px;
+  color: gray;
+}
+.user{
+  font-size: 1em;
+  color: #39f;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.items{
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.icons{
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+}

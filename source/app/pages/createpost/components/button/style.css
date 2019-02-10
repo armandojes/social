@@ -1,0 +1,26 @@
+.button_container{
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-end;
+}
+.button{
+  min-width: 150px;
+  background: #39f;
+  color: #fff;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+.button_cancel{
+  min-width: 150px;
+  background: #808080;
+  color: #fff;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  margin-right: 10px;
+}

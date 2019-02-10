@@ -1,0 +1,16 @@
+.markup{
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.header{
+  padding-bottom: 10px;
+  border-bottom: 1px solid #cdcdcd;
+  margin-bottom: 10px;
+}
+.message{
+  font-size: .9em;
+  color: gray;
+  margin-bottom: 5px;
+}

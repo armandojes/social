@@ -1,0 +1,21 @@
+.content{
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-right: 10px;
+}
+.circleGreen{
+  background: green;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+.circleRed{
+  background: red;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
