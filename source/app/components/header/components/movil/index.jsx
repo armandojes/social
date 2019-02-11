@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './style.css';
 import { Link } from 'react-router-dom';
+import Search from './components/search/index.jsx';
 
 function Movil (){
   return (
@@ -11,9 +12,7 @@ function Movil (){
       <Link to="/" className={style.icons}>
         <img src="public/img/icons/home-white.png" />
       </Link>
-      <Link to="/" className={style.icons}>
-        <img src="public/img/icons/search_white.png" />
-      </Link>
+      <Search className={style.icons} />
       <Link to="/" className={style.icons}>
         <img src="public/img/icons/user_white.png" />
       </Link>

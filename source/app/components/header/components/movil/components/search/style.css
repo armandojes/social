@@ -1,0 +1,14 @@
+.content{
+
+}
+.search_container{
+  top: 40px;
+  background: #fff;
+  border-bottom: 1px solid #cdcdcd;
+  padding: 10px;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 2;
+  width: 100vw;
+  left: -10px;
+}

@@ -2,6 +2,10 @@ const initialState = {
   menu:{
     active: false,
   },
+  search: {
+    active: false,
+    query: '',
+  },
   user: {
     logged: 'loading',
     name: '',
