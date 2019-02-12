@@ -64,11 +64,19 @@ class User extends Model {
   //verifica diponibilidad de correo
   //entry: mail
   //return: true || false
-  public function available_mail($mail) {
-    $exist = $this->Connect->fetch("SELECT id FROM users WHERE mail = '$mail' LIMIT 1");
+  public function available_mail() {
+    $exist = $this->Connect->fetch("SELECT id FROM users WHERE mail = '$this->mail' LIMIT 1");
     return $exist
-    ? false
-    : true;
+    ? false : true;
+  }
+
+  //verifica disponibilidad de username mb_encoding_alias
+  //entry: username
+  //return true || false
+  public function available_username() {
+    $exist = $this->Connect->fetch("SELECT id FROM users WHERE username = '$this->username' LIMIT 1");
+    return $exist
+    ? false : true;
   }
 
 

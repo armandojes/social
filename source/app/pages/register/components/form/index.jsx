@@ -37,7 +37,6 @@ class Form extends Component {
       <div role="form" className={style.form}>
         <h2 className={style.title}> Registrarse </h2>
         <img className={style.picture} src="public/img/icons/logo.png" />
-
         <input value={this.props.username} onChange={this.handleUserName}  type="text" placeholder="Alias" className={style.input} />
         <input value={this.props.name} onChange={(e) => {this.props.set_name(e.target.value)}}  type="text" placeholder="nombre completo" className={style.input} />
         <input value={this.props.mail} onChange={(e) => {this.props.set_mail(e.target.value)}}  type="text" placeholder="correo electronico" className={style.input} />
@@ -48,7 +47,6 @@ class Form extends Component {
           <option value="hombre">Hombre</option>
           <option value="mujer">Mujer</option>
         </select>
-
         <button  onClick={this.handleClik} className={style.button} >Registrar</button>
         <div className={style.message} >Ya tiene una cuenta inicia session ?</div>
         <button  className={style.button_register} > Entrar </button>
