@@ -6,6 +6,12 @@ class Form extends Component {
     super(props);
 
     this.handleClik = this.handleClik.bind(this);
+    this.handleUserName = this.handleUserName.bind(this);
+  }
+
+  handleUserName(e){
+    const char = e.target.value.slice(-1);
+    if (char != ' ') this.props.set_username(e.target.value.toLowerCase())
   }
 
   handleClik(){
@@ -32,7 +38,7 @@ class Form extends Component {
         <h2 className={style.title}> Registrarse </h2>
         <img className={style.picture} src="public/img/icons/logo.png" />
 
-        <input value={this.props.username} onChange={(e) => {this.props.set_username(e.target.value)}}  type="text" placeholder="Alias" className={style.input} />
+        <input value={this.props.username} onChange={this.handleUserName}  type="text" placeholder="Alias" className={style.input} />
         <input value={this.props.name} onChange={(e) => {this.props.set_name(e.target.value)}}  type="text" placeholder="nombre completo" className={style.input} />
         <input value={this.props.mail} onChange={(e) => {this.props.set_mail(e.target.value)}}  type="text" placeholder="correo electronico" className={style.input} />
         <input value={this.props.password} onChange={(e) => {this.props.set_password(e.target.value)}}  type="text" placeholder="contraseña" className={style.input} />
