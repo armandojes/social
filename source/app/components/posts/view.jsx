@@ -8,9 +8,7 @@ function View (props){
 
   if (!props.loading && !props.items.length ){
     return (
-      <Empty
-        
-      />
+      <Empty />
     )
   }
 
