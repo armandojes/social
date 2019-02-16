@@ -1,0 +1,37 @@
+.page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 89vh;
+  box-sizing: border-box;
+}
+.box{
+  background: #fff;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 550px;
+  height: 350px;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.button{
+  width: 150px;
+  padding: 9px;
+  background: #5890ff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.message{
+  margin: 35px 0px;
+}
+@media screen and (max-width: 500px) {
+  .fullpage{
+    background: #fff;
+  }
+}

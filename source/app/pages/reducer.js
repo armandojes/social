@@ -3,6 +3,7 @@ import { combineReducers } from 'redux';
 //pages Reducers
 import reducerLogin from './login/flux.js';
 import reducerRegister from './register/flux.js';
+import reducerActivate from './activate/flux.js';
 
 //admin pages
 import createPostReducer from './createpost/flux.js';
@@ -25,6 +26,7 @@ const reducer = combineReducers({
   category: categoryPosts,
   tags: tagsReducer,
   tag: tagsPostsReducer,
+  activate: reducerActivate,
 });
 
 export default reducer;

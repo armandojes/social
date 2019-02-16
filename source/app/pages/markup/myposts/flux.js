@@ -13,8 +13,10 @@ export const load_posts = () => async (dispatch, getState) => {
   const { id } = state.user;
   const response = await api.post.get_my_posts(id, current_page + 1);
   if (response.error){
-    alert(response.errorMessage);
-    location.reload();
+    if (response.total_items > 0){
+      alert(response.errorMessage);
+      location.reload()
+    }
   } else {
     dispatch(insert_items(response.items));
     dispatch(set_pages(response.pages));

@@ -15,11 +15,16 @@ class User extends Model {
   private $picture = 'non_picture.png';
   private $token = '';
   private $meta = '{}';
+  private $key = null;
 
 
-  //seters
+
+  //s e t e r s
   public function set_id($idnumber){
     $this->id = (int) $idnumber;
+  }
+  public function set_key($strkey){
+    $this->key = (string) $strkey;
   }
   public function set_name($name){
     $this->name = $this->prepare($name);
@@ -56,8 +61,10 @@ class User extends Model {
   //functions
   public function create(){
     $sql = "INSERT INTO users (name, username, mail, password, genero, date, state, type, picture, token, meta) values ('$this->name', '$this->username', '$this->mail', '$this->password', '$this->genero', '$this->date', '$this->state', '$this->type', '$this->picture', '$this->token', '$this->meta')";
-    $state = $this->Connect->create($sql);
-    return $state;
+    $id_user = $this->Connect->create($sql);
+    if (!$id_user) return false;
+    $this->set_id($id_user);
+    return $id_user;
   }
 
 
@@ -100,4 +107,30 @@ class User extends Model {
     return $status;
   }
 
+
+  //crear registro de activacion
+  //entry: $this->id, $this->key
+  //return status
+  public function create_activation(){
+    $status = $this->Connect->create("INSERT INTO activate (user, code) VALUES ($this->id, '$this->key')");
+    return $status;
+  }
+
+  //verificar codigo de activacion
+  //entry: $this->id,$this->key
+  //return true || false
+  public function validate_code (){
+    $data = $this->Connect->fetch("SELECT code FROM activate WHERE user = $this->id LIMIT 1");
+    if (!$data) return false;
+    return $data['code'] === $this->key ? true : false;
+  }
+
+
+  //activar usuario
+  //entry id,
+  public function activate(){
+    $this->Connect->set("UPDATE users SET state = 'active' WHERE id = $this->id LIMIT 1");
+    $this->Connect->set("DELETE FROM activate WHERE user = $this->id LIMIT 1");
+    return true;
+  }
 }

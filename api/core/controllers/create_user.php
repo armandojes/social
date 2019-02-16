@@ -1,5 +1,8 @@
 <?php
 
+use  PHPMailer\PHPMailer\PHPMailer;
+use  PHPMailer\PHPMailer\Exception;
+
 class Create_user extends Controller {
 
   public function execute(){
@@ -8,7 +11,10 @@ class Create_user extends Controller {
     $passed = $this->required([$this->data['mail'], $this->data['password'], $this->data['name'], $this->data['username'], $this->data['sexo']]);
     if(!$passed) $this->response_error('falta algun dato del formulario');
 
+    //crear instancias
     $User = new User();
+    $Mail = new PHPMailer();
+    $Security = new Security();
 
     //setear datos
     $User->set_name($this->data['name']);
@@ -16,10 +22,15 @@ class Create_user extends Controller {
     $User->set_mail($this->data['mail']);
     $User->set_password($this->data['password']);
     $User->set_genero($this->data['sexo']);
+    $Security->set_password($this->data['password']);
+
+    //obtener clave de activacion
+    $activateKey = $Security->create_token();
+    $User->set_key($activateKey);
 
     //verificar disponibilidad de correo
-    $mail_disp = $User->available_mail();
-    if (!$mail_disp) $this->response([
+    $Mail_disp = $User->available_mail();
+    if (!$Mail_disp) $this->response([
       'error' => true,
       'errorDescript' => 'El correo ingresado ya esta registrado anteriormente',
       'errorCode' => 1,
@@ -35,16 +46,30 @@ class Create_user extends Controller {
       'errorType' => 'username',
     ]);
 
-
     $id = $User->create();
-    $response = [
+    $User->create_activation();
+
+    //enviar correo de activacion
+    $Mail->IsSMTP();
+    $Mail->SMTPAuth = true;
+    $Mail->Host = "smtp.hostinger.mx"; // SMTP a utilizar. Por ej. smtp.elserver.com
+    $Mail->Username = "registro@asicspace.com.mx"; // Correo completo a utilizar
+    $Mail->Password = "Jesuselpoeta4772"; // Contraseña
+    $Mail->Port = 587; // Puerto a utilizar
+    $Mail->From = "registro@asicspace.com.mx"; // Desde donde enviamos (Para mostrar)
+    $Mail->FromName = SITENAME;
+
+    $Mail->AddAddress($this->data['mail']); // Esta es la dirección a donde enviamos
+    $Mail->IsHTML(true); // El correo se envía como HTML
+    $Mail->Subject = "Bienvenido a ".SITENAME."! confirma tu correo electronico."; // Este es el titulo del email.
+    $body = mail_template($id, $activateKey);
+    $Mail->Body = $body; // Mensaje a enviar
+    $stateMail = $Mail->Send(); // Envía el correo.
+
+    $this->response([
       'status' => 'ok',
       'error' => false,
       'id' => $id,
-    ];
-
-    $this->response($response);
+    ]);
   }
-
-
 }

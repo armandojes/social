@@ -35,6 +35,8 @@ if (runtime === 'development'){
   define('DB_CHARSET','');
 }
 
+//dates
+define('SITENAME', 'Localhost');
 
 //masterkey
 define('MASTERKEY', 'MARISOLTEEXTRAÑO');

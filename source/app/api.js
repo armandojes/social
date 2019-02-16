@@ -34,6 +34,14 @@ const api = {
     },
   },
   user: {
+    activate: async (data) => {
+      const response = await connect({
+        method: 'post',
+        url: 'user/activate',
+        data: data,
+      });
+      return response.data;
+    },
     logout: async (id_user, token) => {
       const response = await connect({
         method: 'post',

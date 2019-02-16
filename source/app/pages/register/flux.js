@@ -28,6 +28,7 @@ export const set_view = flux.createActionCreator('SET_VIEW');
 export const set_name = flux.createActionCreator('SET_NAME');
 export const set_username = flux.createActionCreator('SET_USERNAME');
 export const set_sexo = flux.createActionCreator('SET_SEXO');
+export const set_initialState = flux.createActionInitialState();
 
 //reducers
 const localState = initialState.pages.register;

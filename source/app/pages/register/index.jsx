@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { set_mail, set_password, set_repassword, set_name, set_username, set_sexo, create_user} from './flux.js';
+import {set_initialState,  set_mail, set_password, set_repassword, set_name, set_username, set_sexo, create_user} from './flux.js';
 import {set_alert} from '../../flux/alert.js';
 import style from './style.css';
 //components
 import Container from '../../components/container/index.jsx';
 import Preloader from '../../components/preloader/index.jsx';
+import Success from '../../components/success/index.jsx';
 import Form from './components/form/index.jsx';
 
 class Register extends Component {
@@ -20,6 +21,11 @@ class Register extends Component {
     if(this.props.logged === true){
       this.props.history.replace('/');
     }
+  }
+
+
+  componentWillUnmount(){
+    this.props.set_initialState();
   }
 
   render(){
@@ -38,7 +44,11 @@ class Register extends Component {
                 <Preloader />
               )}
               {this.props.view === 'success' && (
-                <div> SUCCESS</div>
+                <div className={style.success}>
+                  <Success />
+                  <h2>Registro exitoso!!</h2>
+                  <p className={style.success_message}> La cuenta se ha creado correctamente, ve a tu bandeja de correo electronico y activa tu cuenta.</p>
+                </div>
               )}
             </div>
           </div>
@@ -71,6 +81,7 @@ function mapDispatchToProps (dispatch) {
     set_username,
     set_sexo,
     set_alert,
+    set_initialState,
   }, dispatch);
 }
 

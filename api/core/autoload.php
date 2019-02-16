@@ -6,6 +6,7 @@ require 'config/config.php';
 //functions
 require 'functions/url_construct.php';
 require 'functions/convert_date.php';
+require 'functions/mail_template.php';
 
 //system
 require 'system/router.php';
@@ -22,6 +23,11 @@ require 'models/post.php';
 require 'models/coment.php';
 require 'models/Category.php';
 
+//class php mailer
+
+require  'phpmailer/Exception.php ' ;
+require  'phpmailer/PHPMailer.php ' ;
+require  'phpmailer/SMTP.php ' ;
 
 //controlladores
 require 'controllers/test.php';
@@ -45,7 +51,7 @@ require 'controllers/Posts_category.php';
 require 'controllers/List_tags.php';
 require 'controllers/Posts_tag.php';
 require 'controllers/Logout.php';
-
+require 'controllers/Activate_user.php';
 
 //rutas
 require 'routes/routes.php';

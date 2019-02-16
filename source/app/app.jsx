@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 //pages
 import Login from './pages/login/index.jsx';
+import Activate from './pages/activate/index.jsx';
 import Register from './pages/register/index.jsx';
 import CreatePost from './pages/createpost/index.jsx';
 import Markup from './pages/markup/index.jsx';
@@ -35,6 +36,7 @@ class App extends Component {
           <Switch>
             <Route path="/crearpost" component={CreatePost} />
             <Route exact path="/entrar" component={Login} />
+            <Route exact path="/activate/:iduser/:code" component={Activate} />
             <Route exact path="/registro" component={Register} />
             <Route path="/" component={Markup} />
           </Switch>

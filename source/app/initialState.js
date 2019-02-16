@@ -18,6 +18,11 @@ const initialState = {
     message: null,
   },
   pages: {
+    activate: {
+      status: 'loading',
+      code: null,
+      id_user: 0,
+    },
     tags: {
       loading: true,
       items: [],
