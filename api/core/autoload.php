@@ -22,9 +22,9 @@ require 'models/tag.php';
 require 'models/post.php';
 require 'models/coment.php';
 require 'models/Category.php';
+require 'models/Notific.php';
 
 //class php mailer
-
 require  'phpmailer/Exception.php ' ;
 require  'phpmailer/PHPMailer.php ' ;
 require  'phpmailer/SMTP.php ' ;
@@ -52,6 +52,7 @@ require 'controllers/List_tags.php';
 require 'controllers/Posts_tag.php';
 require 'controllers/Logout.php';
 require 'controllers/Activate_user.php';
+require 'controllers/List_notific.php';
 
 //rutas
 require 'routes/routes.php';

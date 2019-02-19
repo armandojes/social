@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import style from './style.css';
 import Responsive from '../../../../../responsive/index.jsx';
 import Menu from '../menu/index.jsx';
+import Notific from '../notific/index.jsx';
 
 function User (props){
   let { logged, name } = props.user;
@@ -18,9 +19,7 @@ function User (props){
           <div className={style.text}>{name}</div>
         </div>
         <div className={style.sections}>
-          <div className={style.icon}>
-            <img src="public/img/icons/notific_white.png" />
-          </div>
+          <Notific className={style.icon} />
         </div>
         <div className={style.sections}>
           <Menu className={style.icon} />

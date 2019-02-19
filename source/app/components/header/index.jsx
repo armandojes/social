@@ -6,6 +6,7 @@ import Desktop from './components/desktop/index.jsx';
 import Movil from './components/movil/index.jsx';
 
 function Header(){
+  
   return (
     <header className={style.content}>
       <div className={style.header}>

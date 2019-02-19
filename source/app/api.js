@@ -8,6 +8,16 @@ async  function connect (config){
 }
 
 const api = {
+  notific: {
+    get_list: async (data) => {
+      const response = await connect({
+        method: 'post',
+        url: 'notific',
+        data: data,
+      });
+      return response.data;
+    }
+  },
   category: {
     get_posts: async (id_category, page) => {
       const response = await connect({

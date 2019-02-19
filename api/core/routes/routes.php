@@ -42,4 +42,10 @@ $Router-> post('/tag/posts', 'Posts_tag');
 $Router->post('/coments/new', 'New_coment');
 $Router->get('/coments/post/:id/page/:page', 'list_coments');
 
+
+//notific
+$Router->post('/notific', 'List_notific');
+
+
+//dispatcher
 $Router -> dispatch();

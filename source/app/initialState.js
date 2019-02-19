@@ -1,4 +1,11 @@
 const initialState = {
+  notific: {
+    exist: false,
+    loading: false,
+    items: [],
+    num_pages: 0,
+    current_page: 0,
+  },
   menu:{
     active: false,
   },

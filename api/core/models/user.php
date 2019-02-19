@@ -4,6 +4,7 @@
 class User extends Model {
 
   // properties
+  private $idpost;
   private $id;
   private $name;
   private $username;
@@ -22,6 +23,9 @@ class User extends Model {
   //s e t e r s
   public function set_id($idnumber){
     $this->id = (int) $idnumber;
+  }
+  public function set_idpost($idpostnumber){
+    $this->idpost = (int) $idpostnumber;
   }
   public function set_key($strkey){
     $this->key = (string) $strkey;
@@ -132,5 +136,13 @@ class User extends Model {
     $this->Connect->set("UPDATE users SET state = 'active' WHERE id = $this->id LIMIT 1");
     $this->Connect->set("DELETE FROM activate WHERE user = $this->id LIMIT 1");
     return true;
+  }
+
+  //convierte id post en id users
+  //entry id id_post
+  //return id users
+  public function get_user_for_post(){
+    $result = $this->Connect->fetch("SELECT user FROM posts WHERE id = $this->idpost LIMIT 1");
+    return $result ? (int) $result['user'] : false;
   }
 }

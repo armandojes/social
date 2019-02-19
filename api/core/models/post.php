@@ -278,4 +278,17 @@ class Post extends Model {
     $status = $this->Connect->create("INSERT INTO saved (user_id, post_id, meta) VALUES ($this->user, $this->id, '$this->meta')");
     return $status;
   }
+
+
+  //obtiene el titulo del post
+  //entry $this->id
+  //muted $this->title, return title;
+  public function get_title(){
+    $status = $this->Connect->fetch("SELECT title FROM posts WHERE id = $this->id LIMIT 1");
+    if ($status){
+      $this->set_title($status['title']);
+      return $status['title'];
+    }
+    return false;
+  }
 }
