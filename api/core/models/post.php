@@ -291,4 +291,12 @@ class Post extends Model {
     }
     return false;
   }
+
+  // borrar post
+  // entry: id
+  // return  true || false
+  public function delete(){
+    $status = $this->Connect->set("DELETE FROM posts WHERE id = $this->id LIMIT 1");
+    return $status;
+  }
 }

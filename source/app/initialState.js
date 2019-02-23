@@ -1,4 +1,10 @@
 const initialState = {
+  confirm: {
+    state: false,
+    action: null,
+    title: null,
+    message: null,
+  },
   notific: {
     exist: false,
     loading: false,

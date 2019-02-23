@@ -104,6 +104,14 @@ const api = {
     },
   },
   post: {
+    delete: async (data) => {
+      const response = await connect({
+        method: 'post',
+        url: 'post/delete',
+        data: data,
+      });
+      return response.data;
+    },
     create: async (data) => {
       const response = await connect({
         method: 'post',

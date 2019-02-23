@@ -25,6 +25,7 @@ $Router-> post('/post/create','Create_post');
 $Router-> post('/post/saved','Is_saved');
 $Router-> post('/post/save','Save_post');
 $Router-> post('/posts/saved','List_saved_posts');
+$Router-> post('/post/delete','Delete_post');
 $Router-> get('/post/page/:page','Posts');
 $Router-> get('/post/id/:id','Post_controller');
 $Router-> get('/post/userid/:userid/page/:page','Posts_user');

@@ -10,7 +10,8 @@ function View (props) {
         text="Mis posts"
         image="public/img/icons/post.png"
       />
-      <PostView {...props} />
+      <PostView {...props}
+      />
     </Fragment>
   )
 }

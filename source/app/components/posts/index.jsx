@@ -38,6 +38,7 @@ class Posts extends Component {
       <View
         items={this.props.items}
         loading={this.props.loading}
+        options={this.props.options || false}
       />
     )
   }

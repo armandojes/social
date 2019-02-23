@@ -11,8 +11,8 @@ import Markup from './pages/markup/index.jsx';
 //components
 import Header from './components/header/index.jsx';
 import Alert from './components/alert/index.jsx';
+import Confirm from './components/confirm/index.jsx'
 import Autologin from './autologin.jsx';
-
 
 //prueba error404 not found
 function NotFount(){
@@ -27,11 +27,12 @@ function NotFount(){
 class App extends Component {
 
   render(){
-    
+
     return (
       <div role="aplication">
         <Autologin />
         <Alert/>
+        <Confirm />
         <Header />
         <div role="body" >
           <Switch>

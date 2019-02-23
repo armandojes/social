@@ -16,7 +16,7 @@ function View (props){
     return (
       <div className={style.post_container}>
         {
-          props.items.map( item => <Post key={item.id} {...item}/>)
+          props.items.map( item => <Post key={item.id} {...item} options={props.options}/>)
         }
         {props.loading && (
           <Loading />

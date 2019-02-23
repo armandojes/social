@@ -23,6 +23,7 @@ export const load_post = () => async ( dispatch, getState) => {
 
 
 //sync actions
+export const set_initialState = flux.createActionInitialState();
 const set_loading = flux.createActionCreator('SET_LOADING');
 const set_pages = flux.createActionCreator('SET_PAGES');
 const set_currentpage = flux.createActionCreator('SET_CURRENTPAGE');
