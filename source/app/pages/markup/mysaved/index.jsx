@@ -2,12 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Admin from '../../../components/admin/index.jsx';
-import { load_posts } from './flux.js';
+import { load_posts, confirm_delete } from './flux.js';
 import View from './view.jsx';
 
 class MyPosts extends Component {
   constructor(props){
     super(props)
+
+    this.state = {
+      options: [
+        {text: 'Eliminar', action: this.props.confirm_delete}
+      ]
+    }
 
     this.handleScroll =  this.handleScroll.bind(this);
   }
@@ -35,7 +41,9 @@ class MyPosts extends Component {
 
   render(){
     return (
-      <View {...this.props}/>
+      <View {...this.props}
+        options = {this.state.options}
+      />
     )
   }
 }
@@ -47,7 +55,7 @@ const mapStateToProps = (state) => ({
   current_page: state.pages.mysaved.current_page,
 });
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({load_posts}, dispatch);
+const mapDispatchToProps = (dispatch) => bindActionCreators({load_posts, confirm_delete}, dispatch);
 
 
 export default Admin(connect(mapStateToProps, mapDispatchToProps)(MyPosts));

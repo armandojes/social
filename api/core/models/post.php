@@ -16,10 +16,14 @@ class Post extends Model {
   private $user;
   private $itemsforpage = 20;
   private $page = 1;
+  private $saved;
 
   // s e t e r s
   public function set_id ($id){
     $this->id = (int) $id;
+  }
+  public function set_saved ($saved){
+    $this->saved = (int) $saved;
   }
   public function set_tag ($tag){
     $this->tag = (int) $tag;
@@ -174,7 +178,7 @@ class Post extends Model {
   public function get_list_saved(){
     $this->set_list(true);
     $initialfetch = (($this->page - 1) * $this->itemsforpage);
-    $posts = $this->fetch("SELECT posts.id, posts.title, posts.picture, posts.category, posts.url, posts.meta FROM saved INNER JOIN posts ON saved.post_id = posts.id WHERE saved.user_id = $this->user ORDER BY saved.id DESC LIMIT $initialfetch, $this->itemsforpage ");
+    $posts = $this->fetch("SELECT saved.id, posts.title, posts.picture, posts.category, posts.url, posts.meta FROM saved INNER JOIN posts ON saved.post_id = posts.id WHERE saved.user_id = $this->user ORDER BY saved.id DESC LIMIT $initialfetch, $this->itemsforpage ");
     return $posts;
   }
 
@@ -297,6 +301,13 @@ class Post extends Model {
   // return  true || false
   public function delete(){
     $status = $this->Connect->set("DELETE FROM posts WHERE id = $this->id LIMIT 1");
+    return $status;
+  }
+
+  //borrar post guardado
+  //entry: $this->user, $this->id
+  public function delete_save(){
+    $status = $this->Connect->set("DELETE FROM saved WHERE id = $this->saved LIMIT 1");
     return $status;
   }
 }

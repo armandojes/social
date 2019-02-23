@@ -3,6 +3,8 @@ import createFlux from '../../../createFlux.js';
 import initialState from '../../../initialState.js';
 import api from '../../../api.js';
 import { combineReducers } from 'redux';
+import {set_title, set_message, set_state, set_action } from '../../../flux/confirm.js';
+
 
 const flux = createFlux('pages/mysaved');
 
@@ -20,6 +22,30 @@ export const load_posts = () => async (dispatch, getState) => {
   }
   dispatch(set_loading(false));
 }
+
+export const confirm_delete  = (id) => (dispatch) => {
+  dispatch(set_title('Eliminar post guardado'))
+  dispatch(set_message('Realmente quiere eliminar este post que has guardado'))
+  dispatch(set_state(true));
+  dispatch(set_action(delet_save(id)));
+}
+
+const delet_save = (id_saved) => async (dispatch, getState) => {
+  const state = getState();
+  const token = state.user.token;
+  const id_user = state.user.id;
+
+  const response = await api.post.delete_save({id_saved, token, id_user});
+
+  if (!response.error){
+    dispatch(set_initialState());
+    dispatch(load_posts());
+  } else {
+    alert(response.errorMessage);
+    location.reload();
+  }
+}
+
 
 //sync actions
 export const set_initialState = flux.createActionInitialState();

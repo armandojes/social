@@ -5,6 +5,7 @@ class User extends Model {
 
   // properties
   private $idpost;
+  private $saved;
   private $id;
   private $name;
   private $username;
@@ -23,6 +24,9 @@ class User extends Model {
   //s e t e r s
   public function set_id($idnumber){
     $this->id = (int) $idnumber;
+  }
+  public function set_saved($savednumber){
+    $this->saved = (int) $savednumber;
   }
   public function set_idpost($idpostnumber){
     $this->idpost = (int) $idpostnumber;
@@ -144,5 +148,13 @@ class User extends Model {
   public function get_user_for_post(){
     $result = $this->Connect->fetch("SELECT user FROM posts WHERE id = $this->idpost LIMIT 1");
     return $result ? (int) $result['user'] : false;
+  }
+
+  //convierte idsaved en id users
+  //entry saved
+  //return id users
+  public function get_user_for_saved(){
+    $result = $this->Connect->fetch("SELECT user_id FROM saved WHERE id = $this->saved LIMIT 1");
+    return $result ? (int) $result['user_id'] : false;
   }
 }
