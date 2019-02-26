@@ -7,6 +7,7 @@ import reducerActivate from './activate/flux.js';
 
 //admin pages
 import createPostReducer from './createpost/flux.js';
+import editPostReducer from './editpost/flux.js';
 
 //public pages
 import PostReducer from './markup/post/flux.js';
@@ -20,6 +21,7 @@ const reducer = combineReducers({
   login: reducerLogin,
   register: reducerRegister,
   create_post: createPostReducer,
+  edit_post: editPostReducer,
   post:PostReducer,
   myposts: myPostsReducer,
   mysaved: mySavedReducer,

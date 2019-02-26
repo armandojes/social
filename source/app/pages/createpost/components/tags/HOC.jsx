@@ -12,21 +12,15 @@ function HigOrderComponent (WrappedComponent){
         <WrappedComponent
           handleClick={this.handleClick}
           handleChange={this.handleChange}
-          deleteTag={this.deleteTag}
+          deleteTag={this.deleteTag}s
+
+          
           {...this.props}
         />
       )
     }
   }
 
-  function mapStateToProps(state){
-    return {
-
-    }
-  }
-
-
-  return connect(mapStateToProps)(NewComponent);
 }
 
 export default HigOrderComponent;

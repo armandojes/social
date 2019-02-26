@@ -40,7 +40,7 @@ function Form (props){
                 tags={props.tags}
                 set_tagtext={props.set_tagtext}
                 insert_tag={props.insert_tag}
-                set_delete={props.insert_tag}
+                set_delete={props.set_delete}
               />
               <Picture
                 picture={props.picture}

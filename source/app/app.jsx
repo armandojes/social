@@ -6,6 +6,7 @@ import Login from './pages/login/index.jsx';
 import Activate from './pages/activate/index.jsx';
 import Register from './pages/register/index.jsx';
 import CreatePost from './pages/createpost/index.jsx';
+import Editpost from './pages/editpost/index.jsx';
 import Markup from './pages/markup/index.jsx';
 
 //components
@@ -36,7 +37,8 @@ class App extends Component {
         <Header />
         <div role="body" >
           <Switch>
-            <Route path="/crearpost" component={CreatePost} />
+            <Route exact path="/crearpost" component={CreatePost} />
+            <Route exact path="/editar/:url" component={Editpost} />
             <Route exact path="/entrar" component={Login} />
             <Route exact path="/activate/:iduser/:code" component={Activate} />
             <Route exact path="/registro" component={Register} />

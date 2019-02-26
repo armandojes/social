@@ -104,6 +104,14 @@ const api = {
     },
   },
   post: {
+    update: async (data) => {
+      const response = await connect({
+        method: 'post',
+        url: 'post/update',
+        data: data,
+      });
+      return response.data;
+    },
     delete_save: async (data) => {
       const response = await connect({
         method: 'post',

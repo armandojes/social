@@ -67,6 +67,18 @@ const initialState = {
       images: 'button',
       url: null,
     },
+    edit_post: {
+      view: 'loading_post',
+      title: '',
+      content: '',
+      category: '',
+      tags: [],
+      tag_text: '',
+      picture: 'form',
+      images: 'button',
+      url: null,
+      id: null,
+    },
     post: {
       loading: true,
       id: 0,

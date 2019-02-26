@@ -12,6 +12,7 @@ class CreatePost extends Component {
     return(
       <View
         {...this.props}
+        message_loading="Publicando post..."
       />
     )
   }

@@ -55,6 +55,7 @@ require 'controllers/Activate_user.php';
 require 'controllers/List_notific.php';
 require 'controllers/Delete_post.php';
 require 'controllers/Delete_postsave.php';
+require 'controllers/Update_post.php';
 
 //rutas
 require 'routes/routes.php';

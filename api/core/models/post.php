@@ -105,6 +105,14 @@ class Post extends Model {
   }
 
 
+  //delete relation tags
+  //entry: id_tags and id post
+  //return status
+  private function clean_tags(){
+    $status = $this->Connect->set("DELETE FROM relation_tag WHERE post = $this->id");
+    return $status;
+  }
+
   //crea un nuevo Post
   //entry [...this->data
   //return url post
@@ -115,6 +123,20 @@ class Post extends Model {
     $this->update_url();
     $this->create_relation_tag();
     return $this->url;
+  }
+
+
+  //actualizar datos de post
+  //entry [...this->data
+  //return url post
+  public function update(){
+    $this->create_meta();
+    $this->clean_tags();
+    $this->convert_tags();
+    $this->create_relation_tag();
+    $sql = "UPDATE posts SET title = '$this->title', category = $this->category, content = '$this->content',  picture = '$this->picture', meta = '$this->meta' WHERE id = $this->id LIMIT 1";
+    $status = $this->Connect->set($sql);
+    return $status;
   }
 
   //obtienes lista de posts
