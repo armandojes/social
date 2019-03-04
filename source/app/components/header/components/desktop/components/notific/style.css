@@ -1,0 +1,18 @@
+.content{
+  position: relative;
+}
+.pending {
+  background: red;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-radius: 50%;
+  top: -1px;
+  right: 3px;
+}
+.time{
+  color: gray;
+  font-size: .9em;
+  display: flex;
+  align-items: center
+}

@@ -1,0 +1,30 @@
+.content{
+  padding: 15px 10px;
+  height: 57px;
+  border-bottom: 1px solid #cdcdcd;
+}
+.message div {
+  background: #cdcdcdbd;
+  margin-bottom: 6px;
+  height: 14px;
+}
+.time{
+  color: gray;
+  font-size: .9em;
+  display: flex;
+  align-items: center;
+}
+.time .circle{
+  width: 14px;
+  min-width: 14px;
+  height: 14px;
+  min-height: 14px;
+  background: #cdcdcdbd;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.time .date {
+  width: 100%;
+  background: #cdcdcdbd;
+  height: 14px;
+}

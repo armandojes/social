@@ -48,6 +48,7 @@ $Router->get('/coments/post/:id/page/:page', 'list_coments');
 
 //notific
 $Router->post('/notific', 'List_notific');
+$Router->post('/notific/pending', 'Notific_pending');
 
 
 //dispatcher

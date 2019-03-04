@@ -4,6 +4,8 @@ import View from '../createpost/view.jsx';
 import { set_alert } from '../../flux/alert.js';
 import {create, load_post, set_id, set_initial_state, upload_miniature, picture_upload, set_title, set_view, set_content, set_category, set_tagtext, insert_tag, set_delete, set_picture, set_images} from './flux.js';
 import { bindActionCreators } from 'redux';
+import Admin from '../../components/admin/index.jsx';
+
 
 class Edit extends Component {
   constructor(props){
@@ -67,4 +69,4 @@ function mapStateToProps(state, props){
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Edit);
+export default Admin(connect(mapStateToProps, mapDispatchToProps)(Edit));

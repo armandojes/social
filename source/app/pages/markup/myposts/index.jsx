@@ -18,7 +18,7 @@ class MyPosts extends Component {
   }
 
   componentDidMount(){
-    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('scroll', this.handleScroll);
     if (!this.props.current_page){
       this.props.load_posts();
     }

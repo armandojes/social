@@ -6,7 +6,8 @@ const initialState = {
     message: null,
   },
   notific: {
-    exist: false,
+    active: false,
+    pending: false,
     loading: false,
     items: [],
     num_pages: 0,

@@ -17,15 +17,13 @@ class New_coment extends Controller {
     $this->validate(['id_post', 'coment']);
 
 
-    //obtener id de usuario dueo del post
-
-
     //setear datos
     if ($this->session) $Coment->set_user_id($this->data['id_user']);
     $Coment->set_post_id($this->data['id_post']);
     $Coment->set_coment($this->data['coment']);
     $User->set_idpost($this->data['id_post']);
     $state = $Coment->coment_post();
+
 
     $id_ownerPost = $User->get_user_for_post();
     $id_ownerComent = !empty($this->data['id_user']) ? $this->data['id_user'] : 0;

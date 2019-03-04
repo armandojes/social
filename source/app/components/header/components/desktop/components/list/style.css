@@ -1,0 +1,58 @@
+.float {
+	color: #000;
+	position: absolute;
+	background: #fff;
+	border: 1px solid #cdcdcd;
+	right: -16px;
+	top: 35px;
+	z-index: 5;
+	border-radius: 5px;
+}
+.float:after, .float:before {
+	bottom: 100%;
+	right: 27px;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.float:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-bottom-color: #fff;
+	border-width: 8px;
+	margin-right: -8px;
+}
+.float:before {
+	border-color: rgba(205, 205, 205, 0);
+	border-bottom-color: #cdcdcd;
+	border-width: 9px;
+	margin-right: -9px;
+}
+
+.container{
+	box-sizing: border-box;
+	width: 350px;
+	height: 428px;
+	overflow: hidden;
+}
+
+.center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.more{
+	display: flex;
+  justify-content: center;
+  color: #2196f3;
+  padding: 11px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: .9em;
+  border-top: 1px solid #cdcdcd;
+}
+
+/* Loadind */

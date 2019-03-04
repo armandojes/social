@@ -45,7 +45,7 @@ class Notific extends Model {
     $Post = New Post();
     $Post->set_id($this->idpost);
     $titlepost = $Post->get_title();
-    $this->set_message("Hay un nuevo comentario en tu post $titlepost");
+    $this->set_message("Hay un nuevo comentario en tu post <span>$titlepost</span>");
     return $this->message;
   }
   private function new_comment(){
@@ -56,7 +56,7 @@ class Notific extends Model {
     $Post = New Post();
     $Post->set_id($this->idpost);
     $titlepost = $Post->get_title();
-    $this->set_message("$namefromuser ha comentado tu post: $titlepost");
+    $this->set_message("<span>$namefromuser</span> ha comentado tu post: <span>$titlepost</span>");
     return $this->message;
   }
   private function saved_post(){
@@ -67,7 +67,7 @@ class Notific extends Model {
     $Post = New Post();
     $Post->set_id($this->idpost);
     $titlepost = $Post->get_title();
-    $this->set_message("$namefromuser ha guardado en favoritos tu post $titlepost");
+    $this->set_message("<span>$namefromuser</span> ha guardado en favoritos tu post <span>$titlepost</span>");
     return $this->message;
   }
 
@@ -96,8 +96,9 @@ class Notific extends Model {
   public function create_link(){
     $result = $this->Connect->fetch("SELECT url FROM posts WHERE id = $this->idpost LIMIT 1");
     if (!$result) return false;
-    $this->set_link($result['url']);
-    return $result['url'];
+    $result = "/post/" . $result['url'];
+    $this->set_link($result);
+    return $result;
   }
 
   //crea una notificicacion
@@ -115,7 +116,15 @@ class Notific extends Model {
     $initialfetch = (($this->page - 1) * $this->itemsforpage);
     $this->Connect->set_list(true);
     $data = $this->Connect->fetch("SELECT * FROM notific WHERE touser = $this->touser ORDER BY id DESC LIMIT $initialfetch, $this->itemsforpage");
-    return $data;
+    return $data ? array_map("map_date",$data) : false ;
+  }
+
+  //verificar si hay notificaciones pendientes
+  //entry $this->touser
+  //return true || false;
+  public function get_pending(){
+    $data = $this->Connect->fetch("SELECT id FROM notific WHERE touser = $this->touser AND state = 1 LIMIT 1");
+    return $data ? true : false ;
   }
 
 
@@ -138,5 +147,11 @@ class Notific extends Model {
     return (int) ceil($count);
   }
 
-
+  //actualiza notificaciones en pendientes
+  //entry $this->$touser
+  //return status
+  public function update_status (){
+    $status = $this->Connect->set("UPDATE notific SET state = 0 WHERE touser = $this->touser");
+    return $status;
+  }
 }

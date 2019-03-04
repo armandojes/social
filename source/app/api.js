@@ -9,6 +9,14 @@ async  function connect (config){
 
 const api = {
   notific: {
+    load_pending: async (data) => {
+      const response = await connect({
+        method: 'post',
+        url: 'notific/pending',
+        data: data,
+      });
+      return response.data;
+    },
     get_list: async (data) => {
       const response = await connect({
         method: 'post',

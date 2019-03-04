@@ -7,6 +7,7 @@ import searchReducer from './flux/search.js';
 import postsReducer from './flux/posts.js';
 import categoryReducer from './flux/category.js';
 import confirmReducer from './flux/confirm.js';
+import notificReducer from './flux/notific.js';
 
 
 const reducer = combineReducers({
@@ -18,6 +19,7 @@ const reducer = combineReducers({
   category: categoryReducer,
   search: searchReducer,
   confirm: confirmReducer,
+  notific: notificReducer,
 });
 
 export default reducer;

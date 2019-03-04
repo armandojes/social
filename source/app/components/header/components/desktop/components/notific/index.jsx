@@ -1,18 +1,21 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 import style from './style.css';
+import notifichoc from '../../../notifichoc/index.jsx';
+import List from '../list/index.jsx';
 
-
-class Notific extends Component {
-
-
-  render(){
-    return (
-      <div className={this.props.className}>
-        <img src="public/img/icons/notific_white.png" />
-      </div>
-    )
-  }
+function Notific (props){
+  return (
+    <div className={`${props.className} ${style.content}`} onClick={props.handleActive}>
+      <img src="public/img/icons/notific_white.png" />
+      {props.pending === true && (
+        <div className={style.pending}>
+        </div>
+      )}
+      {props.active === true &&(
+        <List />
+      )}
+    </div>
+  )
 }
 
-export default Notific;
+export default notifichoc(Notific);

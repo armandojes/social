@@ -7,6 +7,7 @@ require 'config/config.php';
 require 'functions/url_construct.php';
 require 'functions/convert_date.php';
 require 'functions/mail_template.php';
+require 'functions/map_date.php';
 
 //system
 require 'system/router.php';
@@ -56,6 +57,7 @@ require 'controllers/List_notific.php';
 require 'controllers/Delete_post.php';
 require 'controllers/Delete_postsave.php';
 require 'controllers/Update_post.php';
+require 'controllers/Notific_pending.php';
 
 //rutas
 require 'routes/routes.php';

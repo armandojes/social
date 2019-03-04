@@ -12,3 +12,15 @@
   color: #fff;
   width: 25px;
 }
+.notific{
+  position: relative;
+}
+.notific .pending{
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: red;
+  border-radius: 50%;
+  top: -3px;
+  right: 1px;;
+}

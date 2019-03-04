@@ -57,7 +57,7 @@ export const load_post = () => async (dispatch, getState) => {
     dispatch(set_picture(response.picture));
     dispatch(set_view('form'))
   } else {
-    dispatch(set_view('error'))
+    dispatch(set_view('error_post'))
   }
 
 }

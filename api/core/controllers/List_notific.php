@@ -17,6 +17,9 @@ class List_notific extends Controller {
     $Notific->set_touser($this->data['id_user']);
     $Notific->set_page($this->data['page']);
 
+    //actualizar estado
+    $Notific->update_status();
+
     //obtener datos
     $num_items = $Notific->get_num_items();
     $num_pages = $num_items ? $Notific->get_num_pages() : 0;
