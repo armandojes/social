@@ -34,4 +34,12 @@ class Category extends Model {
     $category = $this->Connect->fetch("SELECT * FROM category WHERE url = '$this->url' LIMIT 1");
     return $category;
   }
+
+  //obtiene datos de una categoria
+  //input: id Category
+  //out: {data}
+  public function get_data_from_id(){
+    $category = $this->Connect->fetch("SELECT * FROM category WHERE id = '$this->id' LIMIT 1");
+    return $category;
+  }
 }

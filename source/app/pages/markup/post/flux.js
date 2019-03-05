@@ -14,7 +14,7 @@ export const load_post  = () => async (dispatch, getState) => {
     dispatch(set_content(response.content));
     dispatch(set_title(response.title));
     dispatch(set_tags(response.meta.tags));
-    dispatch(set_category('prueba'));
+    dispatch(set_category(response.category));
     dispatch(set_meta(response.meta));
   }
   dispatch(set_loading(false));

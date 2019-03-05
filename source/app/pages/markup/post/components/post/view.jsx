@@ -40,11 +40,11 @@ function Post (props){
         </div>
         <div className={style.sections}>
           <img className={style.icons} src="public/img/icons/clock.png" />
-          <div className={style.hiden_mobile}>hace</div> {props.date || '5'} minutos
+          {props.meta.date || 0 }
         </div>
         <div className={style.sections}>
           <img className={style.icons} src="public/img/icons/coments.png" />
-          {props.meta.coments || '5'} <div className={style.hiden_mobile}> comentarios</div>
+          {props.meta.coments || 0} <div className={style.hiden_mobile}> comentarios</div>
         </div>
         <div className={style.sections}>
           <img className={style.icons} src="public/img/icons/views.png" />

@@ -25,7 +25,7 @@ class Post extends Component{
           <img className={style.img} src={this.props.picture} />
         </div>
         <div className={style.data}>
-          <Link to={`post/${this.props.url}`} className={style.title}>{this.props.title}</Link>
+          <Link to={`/post/${this.props.url}`} className={style.title}>{this.props.title}</Link>
           <Responsive rule="min-width:501px">
             <div className={style.meta_content}>
               <div className={style.meta}>

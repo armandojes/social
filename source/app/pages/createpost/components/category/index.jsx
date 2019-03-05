@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
 import Markup from '../markup/index.jsx';
 import style from './style.css';
-
+import { connect } from 'react-redux';
+import { load_category } from '../../../../flux/category.js';
 
 class Category extends Component {
   constructor(props){
     super(props)
 
-    this.state = {
-      list: [
-        {name: 'prueba 1', id: 1},
-        {name: 'prueba 2', id: 2},
-        {name: 'prueba 3', id: 3},
-        {name: 'prueba 4', id: 4},
-        {name: 'prueba 5', id: 5},
-      ],
-    }
-
     this.handleCategory = this.handleCategory.bind(this);
+  }
+
+  componentDidMount(){
+    if (this.props.items.length === 0){
+      this.props.dispatch(load_category());
+    }
   }
 
   handleCategory(e){
@@ -28,19 +25,31 @@ class Category extends Component {
     return (
       <Markup state={this.props.category != "" } text="Categoria">
         <div className={style.body}>
-          <select className={style.select} value={this.props.category} onChange={this.handleCategory} >
-            <option value="">Seleccionar</option>
-            {this.state.list.map((category) =>
-              <option
-                key={category.id}
-                value={category.id}>{category.name}
-              </option>
-            )}
-          </select>
+          {!this.props.loading && this.props.items.length > 0 && (
+            <select className={style.select} value={this.props.category} onChange={this.handleCategory} >
+              <option value="">Seleccionar</option>
+              {this.props.items.map((category) =>
+                <option
+                  key={category.id}
+                  value={category.id}>{category.name}
+                </option>
+              )}
+            </select>
+          )}
+          {this.props.loading && (
+            <div className={style.loading}></div>
+          )}
         </div>
       </Markup>
     )
   }
 }
 
-export default Category;
+function mapStateToProps (state){
+  return {
+    loading: state.category.loading,
+    items: state.category.items,
+  }
+}
+
+export default connect(mapStateToProps)(Category);

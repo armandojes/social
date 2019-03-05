@@ -11,30 +11,23 @@ class Post_controller extends Controller {
 
     //crear instancias
     $Post = new Post();
+    $Category = new Category();
 
     //setear Datos
     $Post->set_id($this->params['id']);
 
     //request
     $post_data = $Post->get_single();
+    if (!$post_data) $this->response([
+      'error' => true,
+      'errorCode' => 404,
+      'errorMessage' => 'El post que estas buscando no existe'
+    ]);
 
-
-    if (!$post_data){
-      $response = [
-        'error' => true,
-        'errorCode' => 404,
-        'errorMessage' => 'El post que estas buscando no existe'
-      ];
-    } else {
-      $response = [
-        'error' => false,
-        'status' => 'ok'
-      ];
-      $response = array_merge($response, $post_data);
-    }
-
-
+    $Category->set_id($post_data['category']);
+    $post_data['category'] = $Category->get_data_from_id()['name'];
+    $post_data['meta']['date'] = convert_date($post_data['date']);
     //responder cliente
-    $this->response($response);
+    $this->response(array_merge(['error' => false, 'status' => 'ok'], $post_data));
   }
 }
