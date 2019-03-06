@@ -6,7 +6,7 @@ import List from '../list/index.jsx';
 function Notific (props){
   return (
     <div className={`${props.className} ${style.content}`} onClick={props.handleActive}>
-      <img src="public/img/icons/notific_white.png" />
+      <img src="public/img/icons/notific_test.png" />
       {props.pending === true && (
         <div className={style.pending}>
         </div>

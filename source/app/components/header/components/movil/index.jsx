@@ -12,21 +12,21 @@ function Movil (props){
         <img src="public/img/icons/logo.png" />
       </Link>
       <Link to="/" className={style.icons}>
-        <img src="public/img/icons/home-white.png" />
+        <img src="public/img/icons/home_test.png" />
       </Link>
       <Search className={style.icons} />
       <Link to="/" className={style.icons}>
-        <img src="public/img/icons/user_white.png" />
+        <img src="public/img/icons/user_test.png" />
       </Link>
       <Link to="/notificaciones" className={`${style.icons} ${style.notific}`}>
-        <img src="public/img/icons/notific_white.png" />
+        <img src="public/img/icons/notific_test.png" />
         {props.pending === true && (
           <div className={style.pending}>
           </div>
         )}
       </Link>
       <Link to="/menu" className={style.icons}>
-        <img src="public/img/icons/menu_white.png" />
+        <img src="public/img/icons/menu_test.png" />
       </Link>
     </div>
   )

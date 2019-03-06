@@ -4,7 +4,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  color: #fff;
+  color: gray;
 }
 .sections{
   display: flex;
@@ -18,6 +18,7 @@
 }
 .icon{
   width: 23px;
+  
 }
 .text{
   margin-left: 5px;

@@ -1,5 +1,7 @@
 .button_container{
+  margin-top: -12px;
   padding: 10px;
+  padding-top: 20px;
   background: #fff;
   border-radius: 5px;
   display: flex;

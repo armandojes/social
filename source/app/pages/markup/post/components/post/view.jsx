@@ -36,7 +36,7 @@ function Post (props){
 
         <div className={`${style.sections} ${style.hiden_tablet}`}>
           <img className={style.icons} src="public/img/icons/category.png" />
-          {props.category || 'preview'}
+          {props.meta.category_name || 'preview'}
         </div>
         <div className={style.sections}>
           <img className={style.icons} src="public/img/icons/clock.png" />

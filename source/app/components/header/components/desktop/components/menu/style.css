@@ -9,11 +9,13 @@
   background: #fff;
   border: 1px solid #cdcdcd;
   position: absolute;
-  z-index: 2;
+  z-index: 10;
   top: 33px;
   right: 0px;
   min-height: 111px;
   width: 200px;
+  background: #fff;
+  border-radius: 5px;
 }
 
 .menu_float:after, .menu_float:before {
@@ -40,5 +42,8 @@
   margin-right: -8px;
 }
 .item{
-  margin-bottom: 10px;
+  text-decoration: none;
+  color: gray;
+  padding: 5px;
+  display: block;
 }

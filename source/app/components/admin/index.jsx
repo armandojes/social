@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import style from './style.css';
+import Loading from '../loadingpage/index.jsx';
 
 function Admin ( WrappedComponent ) {
   function newComponent (props){
@@ -13,9 +14,7 @@ function Admin ( WrappedComponent ) {
     )}
 
     return (
-      <div className={style.loading_content}>
-        cargando...
-      </div>
+      <Loading />
     )
   }
 

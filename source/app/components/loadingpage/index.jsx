@@ -1,17 +1,16 @@
 import React from 'react';
-import Success from '../success/index.jsx';
 import style from './style.css';
+import Preloader from '../preloader/index.jsx';
 
-
-function SuccessPageInt (props){
+function Loading (props){
   return (
     <div className={style.content}>
       {props.title && (
         <div className={style.title}>{props.title}</div>
       )}
-      <Success />
-    </div>
+      <Preloader />
+    </div>    
   )
 }
 
-export default SuccessPageInt;
+export default Loading;

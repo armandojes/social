@@ -18,7 +18,7 @@ class Search extends Component {
   render(){
     return (
       <div to="/" className={`${this.props.className} ${style.content}`}>
-        <img src="public/img/icons/search_white.png" onClick={this.handleClick}/>
+        <img src="public/img/icons/search_test.png" onClick={this.handleClick}/>
         {this.props.active && (
           <div className={style.search_container}>
             <Input />

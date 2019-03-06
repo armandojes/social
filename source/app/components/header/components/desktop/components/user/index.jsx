@@ -14,7 +14,7 @@ function User (props){
       <div className={style.content}>
         <div className={style.sections}>
           <div className={style.icon}>
-            <img src="public/img/icons/user_white.png" />
+            <img src="public/img/icons/user_test.png" />
           </div>
           <div className={style.text}>{name}</div>
         </div>

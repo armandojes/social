@@ -10,15 +10,22 @@ class Post extends Component {
     this.props.dispatch(set_initialState());
   }
 
-  
+
 
   render(){
     return (
       <View
         url={this.props.match.params.url}
+        error={this.props.error}
       />
     )
   }
 }
 
-export default connect(null)(Post);
+function mapStateToProp(state){
+  return {
+    error: state.pages.post.error,
+  }
+}
+
+export default connect(mapStateToProp)(Post);

@@ -25,7 +25,7 @@ class Post_controller extends Controller {
     ]);
 
     $Category->set_id($post_data['category']);
-    $post_data['category'] = $Category->get_data_from_id()['name'];
+    $post_data['meta']['category_name'] = $Category->get_data_from_id()['name'];
     $post_data['meta']['date'] = convert_date($post_data['date']);
     //responder cliente
     $this->response(array_merge(['error' => false, 'status' => 'ok'], $post_data));
