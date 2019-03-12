@@ -31,7 +31,7 @@ class Menu extends Component {
             <Link className={style.item} to="/" >
               inicio
             </Link>
-            <Link className={style.item} to="/miperfil" >
+            <Link className={style.item} to={`/perfil/${this.props.username}`} >
               Mi perfil
             </Link>
             <Link className={style.item} to="/configuraciones" >
@@ -50,6 +50,7 @@ class Menu extends Component {
 function mapStatetoProps (state){
   return {
     active: state.menu.active,
+    username: state.user.username,
   }
 }
 

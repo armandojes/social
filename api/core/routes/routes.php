@@ -15,6 +15,7 @@ $Router -> post('/user/login','Login');
 $Router -> post('/user/login-token','Login_token');
 $Router -> post('/user/logout','Logout');
 $Router -> post('/user/activate','Activate_user');
+$Router -> post('/user','Profile');
 
 //picture
 $Router-> post('/picture/uploadminiature', 'Upload_miniature');

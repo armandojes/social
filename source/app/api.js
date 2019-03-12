@@ -52,6 +52,14 @@ const api = {
     },
   },
   user: {
+    get_sigle_for_username: async (username) => {
+      const response = await connect({
+        method: 'post',
+        url: 'user',
+        data: {username},
+      });
+      return response.data;
+    },
     activate: async (data) => {
       const response = await connect({
         method: 'post',

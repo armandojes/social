@@ -16,6 +16,7 @@ import mySavedReducer from './markup/mysaved/flux.js';
 import categoryPosts from './markup/category_posts/flux.js';
 import tagsReducer from './markup/tags/flux.js';
 import tagsPostsReducer from './markup/tag_posts/flux.js';
+import profileReducer from './markup/profile/flux.js';
 
 
 const reducer = combineReducers({
@@ -30,6 +31,7 @@ const reducer = combineReducers({
   tags: tagsReducer,
   tag: tagsPostsReducer,
   activate: reducerActivate,
+  profile: profileReducer,
 });
 
 export default reducer;

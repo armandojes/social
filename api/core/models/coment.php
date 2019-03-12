@@ -82,6 +82,18 @@ class Coment extends Model {
   }
 
 
+  //obtiene el total de comentarios de un usuario
+  //parasm:: id user
+  //return total comentarios de un usuario
+  public function total_user_coments(){
+    $this->Connect->set_list(true);
+    $count = $this->Connect->fetch("SELECT id FROM coments WHERE user_id = $this->user_id ");
+    return $count ? count($count): 0 ;
+  }
+
+
+
+
   //obtiene el total de paginas
   //params:id de post
   //return: (int) total de paginas de comentarios

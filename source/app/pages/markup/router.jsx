@@ -11,6 +11,7 @@ import Category_posts from './category_posts/index.jsx';
 import Tags from './tags/index.jsx';
 import TagPosts from './tag_posts/index.jsx';
 import Notific from './notific/index.jsx';
+import Profile from './profile/index.jsx';
 
 function Router (){
   return (
@@ -24,6 +25,7 @@ function Router (){
       <Route exact path="/etiquetas" component={Tags} />
       <Route exact path="/etiqueta/:etiqueta" component={TagPosts} />
       <Route exact path="/notificaciones" component={Notific} />
+      <Route exact path="/perfil/:username" component={Profile} />
     </Switch>
   )
 }

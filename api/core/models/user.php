@@ -96,10 +96,22 @@ class User extends Model {
 
 
   //obtener los datos de un usuario
-  //entry:: $this->idea
+  //entry:: $this->id
   //output:: [data...] || false;
   public function get_single(){
     $user = $this->Connect->fetch("SELECT * FROM users WHERE id = $this->id LIMIT 1");
+    if (!$user) return false;
+    $user['meta'] = json_decode($user['meta'], true);
+    $user['id'] = (int) $user['id'];
+    return $user;
+  }
+
+
+  //obtener los datos de un usuario por medio de username
+  //entry:: $this->username
+  //output:: [data...] || false;
+  public function get_single_from_username(){
+    $user = $this->Connect->fetch("SELECT * FROM users WHERE username = '$this->username' LIMIT 1");
     if (!$user) return false;
     $user['meta'] = json_decode($user['meta'], true);
     $user['id'] = (int) $user['id'];

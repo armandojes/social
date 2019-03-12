@@ -1,0 +1,17 @@
+.title{
+  display: block;
+  font-size: 1.3em;
+  color: gray;
+  margin: 30px 0px;
+}
+.empty_posts_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray;
+  color: gray;
+  height: 165px;
+  text-align: center;
+  font-size: 1.1em;
+  border-radius: 5px;
+}

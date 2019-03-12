@@ -32,6 +32,12 @@ const initialState = {
     message: null,
   },
   pages: {
+    profile: {
+      username: null,
+      data: {},
+      loading: false,
+      posts: [],
+    },
     activate: {
       status: 'loading',
       code: null,

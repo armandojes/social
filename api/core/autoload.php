@@ -58,6 +58,7 @@ require 'controllers/Delete_post.php';
 require 'controllers/Delete_postsave.php';
 require 'controllers/Update_post.php';
 require 'controllers/Notific_pending.php';
+require 'controllers/Profile.php';
 
 //rutas
 require 'routes/routes.php';
