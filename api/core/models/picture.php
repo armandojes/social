@@ -51,8 +51,8 @@ class Picture {
     //crear carpetas segun fecha
     $this->year = date("Y");
     $this->mes = date("m");
-    !file_exists("../public/$this->year") ? mkdir("../public/$this->year", 0755) : null;
-    !file_exists("../public/$this->year/$this->mes") ? mkdir("../public/$this->year/$this->mes", 0755) : null;
+    !file_exists("../public/uploads/$this->year") ? mkdir("../public/uploads/$this->year", 0755) : null;
+    !file_exists("../public/uploads/$this->year/$this->mes") ? mkdir("../public/uploads/$this->year/$this->mes", 0755) : null;
   }
 
 
@@ -85,10 +85,10 @@ class Picture {
   }
 
   //set path
-  //input: relative path public/{relativepath}
+  //input: relative path public/uploads/{relativepath}
   //crea path y public_path
   private function set_path(){
-    $this->path = "../public/$this->year/$this->mes/$this->name";
-    $this->public_path = "public/$this->year/$this->mes/$this->name";
+    $this->path = "../public/uploads/$this->year/$this->mes/$this->name";
+    $this->public_path = "public/uploads/$this->year/$this->mes/$this->name";
   }
 }

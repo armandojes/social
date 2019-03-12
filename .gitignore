@@ -1,6 +1,6 @@
 node_modules/
 public/app.js
-public/2018/
-public/2019/
+
 public/style.css
 package-lock.json
+public/uploads/
