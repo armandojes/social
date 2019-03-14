@@ -5,7 +5,7 @@ import Container from '../../components/container/index.jsx';
 import Preloader from '../../components/preloader/index.jsx';
 import Success from '../../components/success/index.jsx';
 import Error from '../../components/error/index.jsx';
-
+import { Helmet } from 'react-helmet';
 
 function View (props){
 
@@ -13,6 +13,11 @@ function View (props){
 
   return (
     <div className={style.fullpage}>
+      <Helmet>
+        <title>Activar cuenta</title>
+        <meta name="description" content="" />
+        <meta name="robots" content="noindex" />
+      </Helmet>
       <Container>
         <div className={style.page}>
           {(props.logged === 'loading' || props.status === 'loading') && (

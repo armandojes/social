@@ -1,19 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import View from './view.jsx';
 import {set_initial_state, upload_miniature, picture_upload, create, set_title, set_view, set_content, set_category, set_tagtext, insert_tag, set_delete, set_picture, set_images} from './flux.js';
 import { set_alert } from '../../flux/alert.js';
 import Admin from '../../components/admin/index.jsx';
+import { Helmet } from 'react-helmet';
 
 class CreatePost extends Component {
 
   render(){
     return(
-      <View
-        {...this.props}
-        message_loading="Publicando post..."
-      />
+      <Fragment>
+        <Helmet>
+          <title>Crear post</title>
+          <meta name="description" content="" />
+          <meta name="robots" content="noindex" />
+        </Helmet>
+        <View
+          {...this.props}
+          message_loading="Publicando post..."
+        />
+      </Fragment>
     )
   }
 

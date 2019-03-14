@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import {set_initialState,  set_mail, set_password, set_repassword, set_name, set_username, set_sexo, create_user} from './flux.js';
 import {set_alert} from '../../flux/alert.js';
 import style from './style.css';
+import { Helmet } from 'react-helmet';
+
 //components
 import Container from '../../components/container/index.jsx';
 import Preloader from '../../components/preloader/index.jsx';
@@ -31,6 +33,11 @@ class Register extends Component {
   render(){
     return (
       <div role="login" className={style.fullpage}>
+        <Helmet>
+          <title>Registrate</title>
+          <meta name="description" content="Registrate para formar parte de esta comunidad" />
+          <meta name="robots" content="index" />
+        </Helmet>
         <Container>
           <div className={style.login}>
             <div className={style.box}>

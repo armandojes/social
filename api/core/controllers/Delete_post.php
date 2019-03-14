@@ -14,6 +14,7 @@ class Delete_post extends Controller {
     //crear instancias
     $Post = new Post();
     $User = new User();
+    $Coment = new Coment();
 
     //setear datsos
     $Post->set_id($this->data['id_post']);
@@ -29,8 +30,15 @@ class Delete_post extends Controller {
       'errorMessage' => 'propietario incorrecto, not autorized!'
     ]);
 
+    //borrar coments
+    $Coment->set_post_id($this->data['id_post']);
+    $Coment->clean_coments();
+
     //Borrar post
     $status = $Post->delete();
+    $Post->clean_tags();
+    $Post->clean_save();
+
 
     if (!$status) $this->response([
       'error' => true,

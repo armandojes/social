@@ -103,4 +103,8 @@ class Coment extends Model {
     return $pages;
   }
 
+  public function clean_coments(){
+    $status = $this->Connect->set("DELETE FROM coments WHERE post_id = $this->post_id");
+    return $status;
+  }
 }

@@ -106,9 +106,9 @@ class Post extends Model {
 
 
   //delete relation tags
-  //entry: id_tags and id post
+  //entry: id post
   //return status
-  private function clean_tags(){
+  public function clean_tags(){
     $status = $this->Connect->set("DELETE FROM relation_tag WHERE post = $this->id");
     return $status;
   }
@@ -332,4 +332,14 @@ class Post extends Model {
     $status = $this->Connect->set("DELETE FROM saved WHERE id = $this->saved LIMIT 1");
     return $status;
   }
+
+
+  //borrar favoritos guardados
+  //entry post id
+  //return state true || false;
+  public function clean_save(){
+    $status = $this->Connect->set("DELETE FROM saved WHERE post_id = $this->id");
+    return $status;
+  }
+
 }

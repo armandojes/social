@@ -1,8 +1,8 @@
-import React, { Component }from 'react';
+import React, { Component, Fragment }from 'react';
 import { connect } from 'react-redux';
 import View from './view.jsx';
 import {load_post, set_id, set_url, set_initialState} from '../../flux.js';
-
+import { Helmet } from 'react-helmet';
 
 class Post extends Component {
   constructor(props){
@@ -26,9 +26,16 @@ class Post extends Component {
   render(){
 
     return (
-      <View
-        {...this.props}
-      />
+      <Fragment>
+        <Helmet>
+          <title>{this.props.title}</title>
+          <meta name="description" content="" />
+          <meta name="robots" content="index" />
+        </Helmet>
+        <View
+          {...this.props}
+        />
+      </Fragment>
     )
   }
 }

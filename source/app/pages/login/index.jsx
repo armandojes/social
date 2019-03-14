@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { set_mail, set_password, login, set_initialState } from './flux.js';
 import style from './style.css';
+import { Helmet } from 'react-helmet';
 
 //components
 import Container from '../../components/container/index.jsx';
@@ -34,6 +35,11 @@ class Login extends Component {
   render(){
     return (
       <div role="login" className={style.fullpage}>
+        <Helmet>
+          <title>Entrar</title>
+          <meta name="description" content="Inicia session en tu cuenta" />
+          <meta name="robots" content="index" />
+        </Helmet>
         <Container>
           <div className={style.login}>
             <div className={style.box}>

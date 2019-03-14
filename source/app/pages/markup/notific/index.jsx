@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import Admin from '../../../components/admin/index.jsx';
 import { load_items } from '../../../flux/notific.js';
 import View from './view.jsx';
+import { Helmet } from 'react-helmet';
+
 
 class Notific extends Component {
   constructor(props){
@@ -34,7 +36,14 @@ class Notific extends Component {
 
   render(){
     return (
-      <View {...this.props}/>
+      <Fragment>
+        <Helmet>
+          <title>Mis Notificaciones</title>
+          <meta name="description" content="" />
+          <meta name="robots" content="noindex" />
+        </Helmet>
+        <View {...this.props}/>
+      </Fragment>
     )
   }
 

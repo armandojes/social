@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import View from '../createpost/view.jsx';
 import { set_alert } from '../../flux/alert.js';
 import {create, load_post, set_id, set_initial_state, upload_miniature, picture_upload, set_title, set_view, set_content, set_category, set_tagtext, insert_tag, set_delete, set_picture, set_images} from './flux.js';
 import { bindActionCreators } from 'redux';
 import Admin from '../../components/admin/index.jsx';
-
+import { Helmet } from 'react-helmet';
 
 class Edit extends Component {
   constructor(props){
@@ -28,7 +28,14 @@ class Edit extends Component {
 
   render(){
     return (
-      <View {...this.props} />
+      <Fragment>
+        <Helmet>
+          <title>Editar post</title>
+          <meta name="description" content="" />
+          <meta name="robots" content="noindex" />
+        </Helmet>
+        <View {...this.props} />
+      </Fragment>
     )
   }
 }
